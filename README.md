@@ -1,5 +1,4 @@
-# Postgresql & PgAdmin powered by compose
-
+# Postgresql powered by compose
 
 ## Requirements:
 * docker >= 17.12.0+
@@ -21,9 +20,3 @@ This Compose file contains the following environment variables:
 * `localhost:5432`
 * **Username:** postgres (as a default)
 * **Password:** postgres (as a default)
-
-## Add a new server in PgAdmin:
-* **Host name/address** `postgres`
-* **Port** `5432`
-* **Username** as `POSTGRES_USER`, by default: `postgres`
-* **Password** as `POSTGRES_PASSWORD`, by default `postgres`
