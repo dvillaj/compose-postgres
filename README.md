@@ -35,3 +35,38 @@ This Compose file contains the following environment variables:
 * **Port** `5432`
 * **Username** as `POSTGRES_USER`, by default: `postgres`
 * **Password** as `POSTGRES_PASSWORD`, by default `postgres`
+
+
+## Connect to postgress from local computer
+
+
+```
+alias psql="docker exec -it postgres_container psql"
+alias dropdb="docker exec -i postgres_container dropdb"
+alias createdb="docker exec -i postgres_container createdb"
+alias pg_dump="docker exec -i postgres_container pg_dump"
+```
+
+### Connect to postgres
+
+```
+psql -U postgres
+```
+
+### Import DVD Rental database
+
+```
+dropdb -U postgres dvdrental
+createdb -U postgres dvdrental
+
+curl -L https://github.com/dvillaj/Taller_BBDD/blob/master/postgresql/data/dvd_rental_dump.sql?raw=true --output dvd_rental_dump.sql
+
+docker exec -i postgres_container psql -U postgres dvdrental < dvd_rental_dump.sql >/dev/null
+rm dvd_rental_dump.sql
+``` 
+
+## Export DVD Rental database
+
+``` 
+pg_dump -U postgres dvdrental > dvd_rental_dump.sql
+```
