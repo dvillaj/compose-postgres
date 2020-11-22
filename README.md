@@ -70,3 +70,15 @@ rm dvd_rental_dump.sql
 ``` 
 pg_dump -U postgres dvdrental > dvd_rental_dump.sql
 ```
+
+
+
+## Connect to the database from R 
+
+Useful links:
+
+- https://www.datacareer.de/blog/connect-to-postgresql-with-r-a-step-by-step-example/
+
+- https://www.r-bloggers.com/2018/07/connecting-r-to-postgresql-on-linux/
+
+Connection String: `Server=localhost;Port=5432;Database=dvdrental;Uid=postgres;;Pwd=postgres;`
